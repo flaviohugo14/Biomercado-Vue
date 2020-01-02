@@ -1,0 +1,23 @@
+type Product {
+  id: ID!
+  name: String!
+  price: Float!
+  variation: String! 
+  date: String!
+  createdAt: String
+  country: String!
+  state: String
+  society: String
+}
+
+type Query {
+  products: [Product!]!
+  product(name: String!, variation: String): [Product]!
+  productsByState(state: String!): [Product]!
+  productsByVariation(variation: String!): [Product]!
+  productsBySociety(society: String!): [Product]!
+}
+
+type Mutation {
+  createProduct(name: String!, price: Float!, variation: String!, date: String!, createdAt: String, country: String!, state: String, society: String): Product
+}
